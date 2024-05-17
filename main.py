@@ -1,8 +1,8 @@
 from Ahorcado.AhorcadoModel import AhorcadoModel
 from Ahorcado.AhorcadoView import AhorcadoView
+from Ventana.Window import Window
 
-
-if __name__ == '__main__':
+def ahorcado_terminal():
     VIDA = 6    
     path="./data/palabras.txt"
     model = AhorcadoModel(path=path, vida=VIDA)
@@ -23,4 +23,9 @@ if __name__ == '__main__':
             if(model.letra_no_ha_sido_escrita(letra=usuario)):
                 model.letra_en_la_palabra(letra=usuario)
     view.dibujar_ahorcado(model.get_vida(),model.get_palabra_elegida())
+
+if __name__ == '__main__':
+    # ahorcado_terminal()
+    window = Window()
+    window.crear_ventana()
 

@@ -28,7 +28,7 @@ class AhorcadoView:
             print("      |")
             print("      |")
             print(self.__cadena)
-            str = f"================\n+----+\n |    |\n      |\n      |\n      |\n {self.__cadena}"
+            str = f"================================\n+----+\n |    |\n      |\n      |\n      |\n {self.__cadena}"
             return str
 
         elif vidas==5:
@@ -39,7 +39,7 @@ class AhorcadoView:
             print("      |")
             print("      |")
             print(self.__cadena)
-            str = f"================\n+----+\n |    |\n o    |\n |    |\n      |\n {self.__cadena}"
+            str = f"================================\n+----+\n |    |\n o    |\n      |\n      |\n {self.__cadena}"
             return str
 
         elif vidas==4:
@@ -50,7 +50,7 @@ class AhorcadoView:
             print(" |    |")
             print("      |")
             print(self.__cadena)
-            str = f"================\n+----+\n |    |\n o    |\n |    |\n      |\n {self.__cadena}"
+            str = f"================================\n+----+\n |    |\n o    |\n |    |\n      |\n {self.__cadena}"
             return str
 
         elif vidas==3:
@@ -61,7 +61,7 @@ class AhorcadoView:
             print("/|    |")
             print("      |")
             print(self.__cadena)
-            str = f"================\n+----+\n |    |\n o    |\n/|    |\n      |\n {self.__cadena}"
+            str = f"================================\n+----+\n |    |\n o    |\n/|    |\n      |\n {self.__cadena}"
             return str
 
         elif vidas==2:
@@ -72,7 +72,7 @@ class AhorcadoView:
             print("/|\   |")
             print("      |")
             print(self.__cadena)
-            str = f"================\n+----+\n |    |\n o    |\n/|\   |\n      |\n {self.__cadena}"
+            str = f"================================\n+----+\n |    |\n o    |\n/|\   |\n      |\n {self.__cadena}"
             return str
 
         elif vidas==1:
@@ -83,7 +83,7 @@ class AhorcadoView:
             print("/|\   |")
             print("/     |")
             print(self.__cadena)
-            str = f"================\n+----+\n |    |\n o    |\n/|\   |\n/     |\n {self.__cadena}"
+            str = f"================================\n+----+\n |    |\n o    |\n/|\   |\n/     |\n {self.__cadena}"
             return str
 
         elif vidas==0:
@@ -94,5 +94,5 @@ class AhorcadoView:
             print("/|\   |")
             print("/ \   |")
             print(f"Has perdido, la palabra correcta era {palabra_buscada}")
-            str = f"================\n+----+\n |    |\n o    |\n/|\   |\n/\    |\n Has perdido, la palabra correcta era {palabra_buscada}"
+            str = f"================================\n+----+\n |    |\n o    |\n/|\   |\n/ \   |\n Has perdido, la palabra correcta era {palabra_buscada}"
             return str

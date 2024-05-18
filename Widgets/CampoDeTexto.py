@@ -3,23 +3,25 @@ import flet as ft
 
 from Ahorcado.AhorcadoModel import AhorcadoModel
 from Ahorcado.AhorcadoView import AhorcadoView
+from Widgets.VistaAhorcado import VistaAhorcado
 
 '''
 Esta clase se encargara de controlar el campo de texto y el boton de poner letra
 '''
 class CampoDeTexto(ft.UserControl):
     #Para poder actualizar la camara necesitamos llevbarnos el la pagina
-    def __init__(self, page:ft.Page, model:AhorcadoModel,view: AhorcadoView):
+    def __init__(self, page:ft.Page, model:AhorcadoModel,view: VistaAhorcado, viewTerminal:AhorcadoView):
         super().__init__()
         self.VIDA = 6        
         self.page = page
         self.model = model
         self.view = view
+        self.viewTerminal = viewTerminal
     '''
     Esta funcion es la que se encarga de realizar la build, añadiendo el boton
     '''
     def build(self):
-        self.view.dibujar_ahorcado(self.model.get_vida(),self.model.get_palabra_elegida())        
+        self.view    
         self.txt_name = ft.TextField(label="Introduce una letra") 
         self.contenido = [
             ft.Row(
@@ -52,7 +54,7 @@ class CampoDeTexto(ft.UserControl):
         else:
             if self.model.letra_no_ha_sido_escrita(str(self.txt_name.value)) :
                 self.model.letra_en_la_palabra(self.txt_name.value)      
-                self.view.dibujar_ahorcado(self.model.get_vida(),self.model.get_palabra_elegida())            
+                self.view.update(text=self.viewTerminal.dibujar_ahorcado(self.model.get_vida(),self.model.get_palabra_elegida()))           
             self.txt_name.error_text = ""
             self.txt_name.value=""        
             self.page.update()

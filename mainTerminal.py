@@ -23,5 +23,5 @@ def ahorcado_terminal():
                 model.letra_en_la_palabra(letra=usuario)
     view.dibujar_ahorcado(model.get_vida(),model.get_palabra_elegida())
 
-if __name__ == '__main__':
-    ahorcado_terminal()
+
+ahorcado_terminal()

@@ -22,18 +22,16 @@ def main(page: ft.Page):
     model.registrar_nuevo_observador(viewTerminal)
 
     page.title = "Ahorcado POO"
-    """
-    Inicia la partida y necesitamos previsualizar el ahorcado
-    """
+    
+    # Inicia la partida y necesitamos previsualizar el ahorcado
+    
     visual_ahorcado_widget = AhorcadoWidget(
         text=viewTerminal.dibujar_ahorcado(
             model.get_vida(), model.get_palabra_elegida()
         ),view=viewTerminal
     )
     page.add(visual_ahorcado_widget)
-    """
-    Inicializacmos el campo de texto y lo añadimos a la pantalla
-    """
+    #Inicializacmos el campo de texto y lo añadimos a la pantalla
     campo_de_texto_widget = CampoDeTextoWidget(model=model,ahorcado_dibujado=visual_ahorcado_widget)
     page.add(campo_de_texto_widget)
 

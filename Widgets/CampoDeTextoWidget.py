@@ -42,9 +42,11 @@ class CampoDeTextoWidget(ft.Card):
         se quitara el boton y el espacio para escribir
         Returns:
             Devuelve el mimso, con la modificacion que le hacemos antes.
-        """
-        if(self.model.get_vida()==0) or self.model.palabra_es_acertada():
-            self.content = None
+        """        
+        if self.model.get_vida()==0:
+            self.content = ft.Text("Has perdido")
+        elif self.model.palabra_es_acertada():
+            self.content = ft.Text("Has ganado")
         return super().update()
 
     def comprobar_texto(self,e):

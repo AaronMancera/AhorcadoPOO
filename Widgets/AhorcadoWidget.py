@@ -3,7 +3,7 @@ import flet as ft
 from Ahorcado.AhorcadoView import AhorcadoView
 
 
-class AhorcadoWidget(ft.SafeArea):
+class AhorcadoWidget(ft.Container):
     def __init__(self, text, view:AhorcadoView):
         """Genera un widget donde se dibujara el ahorcado
 
@@ -12,16 +12,14 @@ class AhorcadoWidget(ft.SafeArea):
             view (AhorcadoView): El control de vista del ahorcado que se encargara de actualizar el dibujo
         """
         super().__init__()
+        
         self.view = view
         self.adaptive=True
         self.top = True
         self.left = True
         self.content = ft.Container(
-            content=ft.Text(text, text_align=ft.TextAlign.CENTER, font_family="Courier New"),
-            adaptive= True,
-            alignment=ft.alignment.center
-            
-        )
+            content=ft.Text(text, text_align=ft.TextAlign.CENTER, font_family="Courier New"),            
+        )        
 
     def update(self, text):
         """Actualizacion de la vista
@@ -33,10 +31,12 @@ class AhorcadoWidget(ft.SafeArea):
             _type_: Devuelve el mismo widget con los cambios realizados
         """
         self.content = ft.Container(
-            content=ft.Text(text, text_align=ft.TextAlign.CENTER, font_family="Courier New"),
-            adaptive= True,
-            alignment=ft.alignment.center
-            
+            col={
+                    "sm": 6,
+                    "md": 4,
+                    "xl": 2,
+                },
+            content=ft.Text(text, text_align=ft.TextAlign.CENTER, font_family="Courier New"),            
         )
         return super().update()
 

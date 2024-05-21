@@ -16,14 +16,15 @@ def myRoutes(page: ft.Page, ruta: str):
         _type_: Devuelve la busqueda de la ruta dentro de las rutas que tenemos registradas
     """
 
-    routes = {"/": Home(page), "/game": Game(page)}
+    routes = {"/": Home(page), "/game": Game(page,ruta)}
+    
     return routes[ruta]
 
 
 class Views:
     """La clase que se va a encargar de gestionar las vistas de la app"""
 
-    def __init__(self, page):
+    def __init__(self, page = ft.Page):
         """Inicializar el gestor de vistas
 
         Args:
@@ -34,6 +35,11 @@ class Views:
         self.ft = ft
         # La pagina en la que queremos que se inicialice la pagina, en este caso el main "/"
         self.body = ft.Container(content=myRoutes(page, "/"))
+        def page_resize(e):
+            page.value = f"{page.width} px"
+            print(page.value)
+            page.update()
+        self.page.on_resize = page_resize
 
     def route_change(self, route):
         """Funcion para cambiar la ruta

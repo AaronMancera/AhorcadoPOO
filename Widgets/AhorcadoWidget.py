@@ -18,6 +18,7 @@ class AhorcadoWidget(ft.Container):
         self.top = True
         self.left = True
         self.content = ft.Container(
+            bgcolor=ft.colors.YELLOW,
             content=ft.Text(text, text_align=ft.TextAlign.CENTER, font_family="Courier New"),            
         )        
 

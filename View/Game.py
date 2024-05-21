@@ -48,41 +48,26 @@ def Game(page, ruta):
         # )
 
         # page.add(visual_ahorcado_widget)
-        mostrar_juego.controls.append(
-            visual_ahorcado_widget
-        )
+        mostrar_juego.controls.append(visual_ahorcado_widget)
+
         # Inicializacmos el campo de texto y lo añadimos a la pantalla
         campo_de_texto_widget = CampoDeTextoWidget(
             model=model, ahorcado_dibujado=visual_ahorcado_widget
         )
         # page.add(campo_de_texto_widget)
-        # mostrar_juego.controls.append(
-        #     ft.Column(
-        #         col={
-        #             "sm": 6,
-        #             "md": 4,
-        #             "xl": 2,
-        #         },
-        #         controls=campo_de_texto_widget,
-        #     )
-        # )
+        mostrar_juego.controls.append(
+            campo_de_texto_widget
+        )
 
         def btn_go_to_home(e):
             page.go("/")
             page.update()
 
-        # mostrar_juego.controls.append(
-        #     ft.Column(
-        #         col={
-        #             "sm": 6,
-        #             "md": 4,
-        #             "xl": 2,
-        #         },
-        #         controls=ft.ElevatedButton(
-        #             text="Ir para el juego", on_click=btn_go_to_home
-        #         ),
-        #     )
-        # )
+        mostrar_juego.controls.append(
+            ft.ElevatedButton(
+                    text="Ir para el juego", on_click=btn_go_to_home
+                )
+        )
         content = mostrar_juego
 
     return content

@@ -27,46 +27,42 @@ def Game(page, ruta):
             view=viewTerminal,
         )
         mostrar_juego = ft.ResponsiveRow()
-        # mostrar_juego = ft.ResponsiveRow(
-        #     [
-        #         ft.Container(
-        #             ft.Text("Column 1"),
-        #             bgcolor=ft.colors.RED,
-        #             col={"sm": 6, "md": 4, "xl": 2},
-        #         ),
-        #         ft.Container(
-        #             ft.Text("Column 1"),
-        #             bgcolor=ft.colors.RED,
-        #             col={"sm": 6, "md": 4, "xl": 2},
-        #         ),
-        #         ft.Container(
-        #             ft.Text("Column 1"),
-        #             bgcolor=ft.colors.RED,
-        #             col={"sm": 6, "md": 4, "xl": 2},
-        #         ),
-        #     ]
-        # )
 
         # page.add(visual_ahorcado_widget)
-        mostrar_juego.controls.append(visual_ahorcado_widget)
+        # mostrar_juego.controls.append(visual_ahorcado_widget)
 
         # Inicializacmos el campo de texto y lo añadimos a la pantalla
         campo_de_texto_widget = CampoDeTextoWidget(
             model=model, ahorcado_dibujado=visual_ahorcado_widget
         )
         # page.add(campo_de_texto_widget)
-        mostrar_juego.controls.append(
-            campo_de_texto_widget
-        )
+        # mostrar_juego.controls.append(
+        #     campo_de_texto_widget
+        # )
 
         def btn_go_to_home(e):
             page.go("/")
             page.update()
 
-        mostrar_juego.controls.append(
-            ft.ElevatedButton(
-                    text="Ir para el juego", on_click=btn_go_to_home
-                )
+        # mostrar_juego.controls.append(
+        #     ft.ElevatedButton(
+        #             text="Ir para el juego", on_click=btn_go_to_home
+        #         )
+        # )
+        mostrar_juego = ft.ResponsiveRow(
+            [
+                visual_ahorcado_widget,
+                ft.Container(
+                    campo_de_texto_widget,
+                    bgcolor=ft.colors.RED,
+                    
+                ),
+                ft.Container(
+                    ft.ElevatedButton(text="Ir para el menu", on_click=btn_go_to_home, adaptive=True),
+                    bgcolor=ft.colors.YELLOW,
+                    
+                ),
+            ]
         )
         content = mostrar_juego
 

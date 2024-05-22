@@ -9,7 +9,7 @@ from View.Views import Views
 def main(page: ft.Page):
     page.title = "Ahorcado POO"
     page.window_center=True
-    page.window_min_width = 800
+    page.window_min_width = 640
     page.window_min_height = 640
     page.window_to_front = True
     router = Views(page=page)

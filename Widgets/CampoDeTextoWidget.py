@@ -22,14 +22,14 @@ class CampoDeTextoWidget(ft.Card):
                     content=self.txt_name,
                     col={"md":12,"lg":6}
                 ),
-                ft.Container(
+                ft.Container(                
                     col={"md":12,"lg":6},
                     content=ft.TextButton(                        
                         text="Aceptar",
                         on_click=self.comprobar_texto,
-                        
-                        
-                    )
+                        height=60
+                    ),
+                    
                 ),
             ]
         )

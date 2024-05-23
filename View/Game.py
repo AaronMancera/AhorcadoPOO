@@ -55,12 +55,19 @@ def Game(page, ruta):
                 ft.Container(
                     campo_de_texto_widget,
                     bgcolor=ft.colors.RED,
-                    
                 ),
                 ft.Container(
-                    ft.ElevatedButton(text="Ir para el menu", on_click=btn_go_to_home, adaptive=True),
+                    col={"sm": 2},
+                    content=ft.TextButton(
+                        content=ft.Row(
+                            [ft.Icon(name=ft.icons.HOME)],
+                            alignment=ft.MainAxisAlignment.SPACE_AROUND,
+                        ),
+                        on_click=btn_go_to_home,
+                        adaptive=True,
+                    ),
                     bgcolor=ft.colors.YELLOW,
-                    
+                    width=150,
                 ),
             ]
         )

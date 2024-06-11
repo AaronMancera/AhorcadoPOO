@@ -14,12 +14,12 @@ def Home(page):
 
     content = ft.ResponsiveRow(
         [
-            ft.Container(
+            ft.Container(                
                 #https://github.com/flet-dev/flet/discussions/2545
                 content=ft.Column(
                     controls=[
                         ft.Image(
-                            src="../assets/Img/test.svg",
+                            src="/Img/test.svg",
                             fit=ft.ImageFit.CONTAIN,
                             expand=True,
                         )
@@ -29,7 +29,7 @@ def Home(page):
                 ),
                 col={"md": 12, "lg": 4, "xl": 3},
                 alignment=ft.alignment.top_center,
-                bgcolor=ft.colors.YELLOW,
+                # bgcolor=ft.colors.YELLOW,
             ),
             ft.Container(
                 content=ft.Column(
@@ -40,7 +40,7 @@ def Home(page):
                     ],
                 ),
                 col={"md": 12, "lg": 8, "xl": 9},
-                bgcolor=ft.colors.GREEN,
+                # bgcolor=ft.colors.GREEN,
             ),
         ]
     )

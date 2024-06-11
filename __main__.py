@@ -12,6 +12,7 @@ def main(page: ft.Page):
     page.window_min_width = 640
     page.window_min_height = 640
     page.window_to_front = True
+    # page.bgcolor = ft.colors.RED
     router = Views(page=page)
     page.on_route_change = router.route_change
     page.add(
@@ -23,7 +24,6 @@ def main(page: ft.Page):
             expand=True,
         )
     )
-
     page.go('/')
     page.update()
 # def juego(page:ft.Page):
@@ -51,4 +51,4 @@ def main(page: ft.Page):
 #     page.add(campo_de_texto_widget)
 
 if __name__ == "__main__":
-    ft.app(target=main)
+    ft.app(target=main,assets_dir="assets")
